@@ -34,7 +34,7 @@ export const revalidate = 0;
 export default async function BlogPost({ params }) {
   const slug = (await params).slug;
   const res = await fetcher(
-    `http://localhost:1337/api/blogs?filters[slug][$eq]=${slug}&populate=*`
+    `https://automatic-eggs-6942e980d8.strapiapp.com/api/blogs?filters[slug][$eq]=${slug}&populate=*`
   );
   const post = res.data[0];
   await triggerPipedream(
@@ -50,13 +50,14 @@ export default async function BlogPost({ params }) {
   if (!post) return <p>Blog not found!</p>;
 
   const { title, description, Image } = post;
+  console.log(post);
 
   return (
     <section style={{ padding: "2rem" }}>
       <h1>{title}</h1>
       {Image && (
         <img  
-          src={`http://localhost:1337${Image.url}`}
+          src={`https://automatic-eggs-6942e980d8.media.strapiapp.com/${Image.url}`}
           alt={title}
           width={400}
           height={250}

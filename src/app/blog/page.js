@@ -6,7 +6,7 @@ import styles from './page.module.scss';
 export const revalidate = 10; 
 
 export default async function BlogPage() {
-  const res = await fetcher("http://localhost:1337/api/blogs?populate=*"); 
+  const res = await fetcher("https://automatic-eggs-6942e980d8.strapiapp.com/api/blogs?populate=*"); 
   const posts = res.data;
 
   return (

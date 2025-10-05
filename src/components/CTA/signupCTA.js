@@ -7,7 +7,6 @@ import styles from "./signupCTA.module.scss";
 import Link from "next/link";
 
 export default function SignupCTA({ source }) {
-    console.log(useSearchParams);
   const searchParams = useSearchParams();
 
   // Initialize Mixpanel once
