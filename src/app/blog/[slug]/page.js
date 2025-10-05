@@ -2,6 +2,7 @@ import Image from "next/image";
 import { fetcher } from "@/lib/api";
 import { triggerPipedream } from "@/lib/pipedream";
 import MixpanelView from "@/components/MixpanelEvent";
+import SignupCTA from "@/components/CTA/signupCTA";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -62,6 +63,7 @@ export default async function BlogPost({ params }) {
         />
       )}
       <p>{description}</p>
+       <SignupCTA source={slug} />
       <MixpanelView title={title} slug={slug} />
     </section>
   );
